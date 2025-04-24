@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <title>Қазақтың дәстүрлері</title>
+  <style>
+    body {
+      background: url('kazakh-ornament-bg.jpg') center/cover no-repeat fixed;
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      color: white;
+    }
+
+    button {
+      padding: 15px 30px;
+      margin: 15px;
+      font-size: 20px;
+      border-radius: 12px;
+      border: none;
+      background-color: #802a2a;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #a94442;
+    }
+
+    #videoContainer {
+      margin-top: 40px;
+    }
+
+    video {
+      max-width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 0 15px black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Қазақтың дәстүрлері</h1>
+
+  <div>
+    <button onclick="playVideo(1)">Тұсаукесер</button>
+    <button onclick="playVideo(2)">Шілдехана</button>
+    <button onclick="playVideo(3)">Сүйінші</button>
+  </div>
+
+  <div id="videoContainer"></div>
+
+  <script>
+    function playVideo(num) {
+      const container = document.getElementById("videoContainer");
+      const videoPath = `aje_${num}_animated.webm`;
+      container.innerHTML = `
+        <video src="${videoPath}" autoplay controls></video>
+      `;
+    }
+  </script>
+</body>
+</html>
